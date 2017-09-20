@@ -17,8 +17,15 @@ public class LoginService {
 	@Autowired
 	private LoginDao loginDao;
 	
-	public List<Users> LoginList(){
-		System.out.println("进入service");
+	public List<Users> LoginList(){//登录
 		return this.loginDao.LoginList();
+	}
+	
+	public List<Users> registerSelect(){//注册查询
+		return this.loginDao.registerSelect();
+	}
+	
+	public void register(Users users){
+		loginDao.register(users);
 	}
 }

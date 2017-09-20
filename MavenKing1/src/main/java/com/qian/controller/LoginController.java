@@ -1,26 +1,43 @@
 package com.qian.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;  
+import javax.servlet.http.HttpServletResponse; 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qian.service.LoginService;
 import com.web.bean.Users;
 
 @Controller
 @RequestMapping("/Login")
-public class LoginController {
+public class LoginController {//页面跳转，用户登录，用户注册
 	
 	@Autowired
 	private LoginService loginService;
 	
-	@RequestMapping("index")
+	@RequestMapping("/index")//进入首页
 	public String test1(){
 		return "qian_index";
 	}
+	
+	@RequestMapping("/qian_FondPassword")//忘记密码
+	public String FondPassword(){
+		return "qian_FondPassword";
+	}
+	
+	@RequestMapping("/qian_add")//进入注册页面
+	public String qian_add(){
+		return "qian_add";
+	}
+	
 	@RequestMapping("/qian_experience")
 	public String qian_experience(){//进入网上体验中心登录页面
 		return "qian_experience";
@@ -38,7 +55,7 @@ public class LoginController {
 		return "qian_Library";
 	}
 	@RequestMapping("/qian_press")
-	public String qian_press(){//进入新闻中心登录页面
+	public String qian_press(){//进入新闻中心页面
 		return "qian_press";
 	}
 	@RequestMapping("/qian_Product")
@@ -55,8 +72,8 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/login")
-	public String LoginList(Users users,Model model){
-		
+	@ResponseBody
+	public String LoginList(Users users,Model model){//登录
 		List<Users> list=loginService.LoginList();
 		for (Users u : list) {
 			if (u.getUser_name().equals(users.getUser_name())||u.getPassword().equals(users.getPassword())) {
@@ -74,7 +91,52 @@ public class LoginController {
 				return "qian_login";
 			}
 		}
-		
 		return "";
 	}
+	
+	@RequestMapping("/registerName")//注册用户名验证
+	@ResponseBody
+	public boolean registerName(String username) throws IOException{
+		List<Users> list=loginService.registerSelect();
+		for (Users users : list) {
+			if (users.getUser_name().equals(username)) {
+					return false;
+			} 
+		}
+		return true;
+	}
+	
+	@RequestMapping("/registerPhone")//注册手机号码验证
+	@ResponseBody
+	public boolean registerPhone(String phone) throws IOException{
+		List<Users> list=loginService.registerSelect();
+		for (Users users : list) {
+			if ((phone).equals(users.getMobile_Phone())) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	@RequestMapping("/register")//注册
+	public void register(Users users,HttpServletRequest request,HttpServletResponse response) throws IOException{
+		loginService.register(users);
+		PrintWriter out=response.getWriter();
+		out.println("注册成功");
+	}
+	
+	@RequestMapping("/FondPassword")//忘记密码
+	@ResponseBody
+	public boolean FondPassword(String mobile_Phone,String smCode){
+		List<Users> list=loginService.registerSelect();
+		for (Users u : list) {
+			if (mobile_Phone.equals(u.getMobile_Phone())) {
+				if(smCode.equals("admin")){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 }

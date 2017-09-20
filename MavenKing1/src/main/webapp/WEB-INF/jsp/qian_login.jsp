@@ -86,8 +86,10 @@ ul#nav li a:hover {
 				value="" id="log_username"> <span class="fr fc_9"
 				id="login_bt">您好，<a href="/MavenKing1/Login/qian_login"
 				class="mar_l10 toplogin" title="登录">请登录</a><a
-				href="../jsp/qian_add.jsp"
-				class="mar_r10 mar_l10 toplogin" title="注册">免费注册</a></span>
+				href="/MavenKing1/Login/qian_add"
+				class="mar_r10 mar_l10 toplogin" title="注册">免费注册</a>
+				<a class="mar_r10 mar_l10 toplogin" href="/MavenKing1/Login/qian_FondPassword">忘记密码</a>
+				</span>
 		</div>
 	</div>
 
@@ -143,13 +145,13 @@ ul#nav li a:hover {
 										</tr>
 										<tr>
 											<td class="pt_10 pb_20"><label class="touzi01 long">
-													<input type="text" name=user_name id="username"
+													<input type="text" name=user_name id="user_name"
 													class="input_1 pos_u gray_border wid_258"> <span id="usernameShow">请输入用户名</span>
 											</label></td>
 										</tr>
 										<tr>
 											<td class="pb_15"><label class="touzi01 long"> <input
-													type="password" name="password" id="pwd"
+													type="password" name="password" id="password"
 													class="input_1 pos_p gray_border wid_258"> <span
 													id="pwdShow">请输入密码</span>
 											</label></td>
@@ -181,79 +183,111 @@ ul#nav li a:hover {
 										</tr>
 										<tr>
 											<td class="pb_15"><input type="button"
-												class="submit wid_310" onclick="Login();" value="登录">
+												class="submit wid_310" onclick="javascript:Login();" value="登录">
 
 												<!-- 普通登录的js --> 
 									<script type="text/javascript">
-                                      function Login(){
-                                    	  var username=$('#username').val();
-                                    	  var pwd=$('#pwd').val();
-                                    	  var Phone=$('#mobile_Phone').val();
-                                    	  var smCode=$('#smCode').val();
-                                    	  var flag=true;
-                                    	  if(username.length<1){//用户名
-                                    		  $('#errorMsg').addClass()
-                                          	$('#errorMsg').css("display","block");
-                                          	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>用户名不能为空</span></div>");
-                                    	  
-                                         // 用户名输入框的错误样式
-                                        	$('#username').addClass("red");
-                                        	//去除其他框错误样式
-                                        	$('#pwd').removeClass("red");
-                                        	$('#Phone').removeClass("red");
-                                        	$('#smCode').removeClass("red");
-                                        	
-                                        	
-                                        	return false;
-                                    	  }else if(pwd.length<1){//密码
-                                    		  $('#errorMsg').css("display","block");
-                                          	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>密码不能为空</span></div>");
-                                    	  
-                                    	  
-                                         // 密码输入框的错误样式
-                                        	$('#pwd').addClass("red");
-                                        	//去除其他框错误样式
-                                        	$('#username').removeClass("red");
-                                        	$('#Phone').removeClass("red");
-                                        	$('#smCode').removeClass("red");
-                                        	
-                                        	return false;
-                                    	  }else if(Phone.length<1){//电话号码
-                                    		  $('#errorMsg').css("display","block");
-                                          	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>手机号码不能为空</span></div>");
-                                    	 
-                                         // 手机号码输入框的错误样式
-                                        	$('#Phone').addClass("red");
-                                        	//去除其他框错误样式
-                                        	$('#username').removeClass("red");
-                                        	$('#pwd').removeClass("red");
-                                        	$('#sm').removeClass("red");
-                                        	
-                                        	return false;
-                                    	  }else if(smCode.length<1){//验证码
-                                    		  $('#errorMsg').css("display","block");
-                                          	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>验证码不能为空</span></div>");
-                                    	 
-                                         // 验证码输入框的错误样式
-                                        	$('#smCode').addClass("red");
-                                        	//去除其他框错误样式
-                                        	$('#username').removeClass("red");
-                                        	$('#Phone').removeClass("red");
-                                        	$('#pwd').removeClass("red");
-                                        	
-                                        	return false;
+									  var flag=true;
+                                    	  $(function(){
+                                    		$("#user_name").blur(function(){
+                                    			 var username=$('#user_name').val();
+                                    			 if(username.length<1){//用户名
+                                           		  $('#errorMsg').addClass()
+                                              		  $('#errorMsg').css("display","block");
+                                                 	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>用户名不能为空</span></div>");                                         	  
+                                                // 用户名输入框的错误样式
+                                               	$('#user_name').addClass("red");
+                                               	//去除其他框错误样式
+                                               	$('#password').removeClass("red");
+                                               	$('#mobile_Phone').removeClass("red");
+                                               	$('#smCode').removeClass("red");
+                                               	
+                                               	
+                                               	return false;
+                                           	  }
+                                    		});  
+                                    		
+                                    		$("#password").blur(function(){
+                                    			 var pwd=$('#password').val();
+                                    			 if(pwd.length<1){//密码
+                                    				 
+                                    				 flag=false;
+                                           		  $('#errorMsg').css("display","block");
+                                                 	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>密码不能为空</span></div>");
+                                           	  
+                                           	  
+                                                // 密码输入框的错误样式
+                                               	$('#password').addClass("red");
+                                               	//去除其他框错误样式
+                                               	$('#user_name').removeClass("red");
+                                               	$('#mobile_Phone').removeClass("red");
+                                               	$('#smCode').removeClass("red");
+                                               	
+                                               	return false;
+                                           	  }
+                                    			 
+                                    		});
+                                    		
+												$("#mobile_Phone").blur(function(){
+													 var Phone=$('#mobile_Phone').val();
+													 if(Phone.length<1){//电话号码
+														 
+														 alert(flag);
+			                                    		  $('#errorMsg').css("display","block");
+			                                          	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>手机号码不能为空</span></div>");
+			                                    	 
+			                                         // 手机号码输入框的错误样式
+			                                        	$('#mobile_Phone').addClass("red");
+			                                        	//去除其他框错误样式
+			                                        	$('#user_name').removeClass("red");
+			                                        	$('#password').removeClass("red");
+			                                        	$('#smCode').removeClass("red");
+			                                        	
+			                                        	return false;
+			                                    	  }
+                                    		});
+                                    		
+												
+												$("#smCode").blur(function(){
+													 var smCode=$('#smCode').val();
+													 if(smCode.length<1){//验证码
+														flag=false;
+			                                    		  $('#errorMsg').css("display","block");
+			                                          	$('#errorMsg').html("<div class='bg-stan pl_10'><i class='ico_all icon_18 info_icon s_tan mr_5'></i><span class='va-m lin_24 pl_5'>验证码不能为空</span></div>");
+			                                    	 
+			                                         // 验证码输入框的错误样式
+			                                        	$('#smCode').addClass("red");
+			                                        	//去除其他框错误样式
+			                                        	$('#user_name').removeClass("red");
+			                                        	$('#mobile_Phone').removeClass("red");
+			                                        	$('#password').removeClass("red");
+			                                        	
+			                                        	return false;
+			                                    	  }
+												});
+													
+	                                    		 
+                                    	  });
+                                    	  function Login(){
+                                    		  alert(flag);
+                                    		  var user_name=$("#user_name").val();
+                                    		  var password=$("#password").val();
+                                    		  var mobile_Phone=$("#mobile_Phone").val();
+                                    		  var smCode=$("#smCode").val();
+                                    		  if(flag!=false&&flag==true){
+													$.post(
+														"/MavenKing1/Login/login",
+														{user_name:user_name,
+														password:password,
+														mobile_Phone:mobile_Phone,
+														smCode:smCode
+														},
+														function(data){
+															
+														}
+													);
+												}
                                     	  }
-                                    		 
-                                    		  $("#loginForm").attr("action","/MavenKing1/Login/login");
-                                        		$("#loginForm").submit();
-                                    	  
-                                      }
-                                      $(document).ready(function(){
-                                    	  
-                                        	$('#Msg').html("<font color='red'>${LoginMsg}</font>");
-                                        	
-                                      });
-                                      
                                       </script></td>
 										</tr>
 
