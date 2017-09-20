@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.web.bean.Finance_product_funds;
 import com.web.bean.Users;
 
 @Component
@@ -34,5 +35,11 @@ public class LoginDao {
 	public void register(Users users){//注册
 		Session session=getSession();
 		session.save(users);
+	}
+	
+	public List<Finance_product_funds> SelectFunds(){//首页显示
+		Session session=getSession();
+		List<Finance_product_funds> list=session.createQuery("from Finance_product_funds ORDER BY buyer_count desc").list();
+	return list;
 	}
 }

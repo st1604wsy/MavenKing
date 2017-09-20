@@ -164,7 +164,7 @@ ul#nav li a:hover {
 	
 	
 	<!-- 中间显示，自己添加 -->
-	<div><center>中间显示，自己添加</center></div>
+	<center><div style="width: 75%"><img src="/MavenKing1/images/下载中心.png"></div></center>
 	<!-- 底部 -->
 	<center>
 		<div class="container index">

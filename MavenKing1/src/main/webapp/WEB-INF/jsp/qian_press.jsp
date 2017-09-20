@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>新闻中心</title>
 
+<link href="/MavenKing1/js/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script src="/MavenKing1/js/bootstrap/jquery.min.js"></script>
+<script src="/MavenKing1/js/bootstrap/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../css/new-login.css">
 <script type="text/javascript" src="../js/nwd_common.js"></script>
@@ -168,7 +171,112 @@ ul#nav li a:hover {
 	
 	
 	<!-- 中间显示，自己添加 -->
-	<div><center>中间显示，自己添加</center></div>
+	<center><div style="width: 80%">
+	<ul id="myTab" class="nav nav-tabs">
+   <li class="active">
+      <a href="#home" data-toggle="tab">
+         平台公告     </a>
+   </li>
+   <li><a href="#ios" data-toggle="tab">市场动态</a></li>
+   <li class="dropdown">
+      <a href="#" id="myTabDrop1" class="dropdown-toggle" 
+         data-toggle="dropdown">更多 
+         <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+         <li><a href="#jmeter" tabindex="-1" data-toggle="tab">趣味理财</a></li>
+         <li><a href="#ejb" tabindex="-1" data-toggle="tab">新闻头条</a></li>
+      </ul>
+   </li></ul><div id="myTabContent" class="tab-content">
+   <div class="tab-pane fade in active" id="home">
+    <p> <a href="#" target="_blank">2017年春节放假安排</a><span class="time">2017-01-23</span></p>
+<p><a href="#" target="_blank">重磅推出阳光私募基金-吉威量化套利稳健1号</a><span class="time">2016-04-14</span></p>
+<p><a href="#" target="_blank">关于盈+理财平台安全卡管理通告</a><span class="time">2016-01-13</span></p>
+<p><a href="" target="_blank">盈+全球首映</a><span class="time">2015-07-13</span></p>
+
+      <p></p>
+   </div>
+				<div class="tab-pane fade" id="ios">
+					<p>
+						<a href=""
+							target="_blank">私募巨头贝莱德掌门人：负利率或导致“危险”后果</a><span class="time">2016-04-15</span>
+					</p>
+					<p>	
+				<a href=""
+						target="_blank">美联储告诉全世界：紧盯中国！</a><span class="time">2015-09-21</span>
+					</p>
+					<p>	
+					<a href=""
+						target="_blank">央行马骏：中国经济前景将明显好于那些悲观的市场预</a><span class="time">2015-09-17</span>
+					</p>
+					<p>	
+					<a href=""
+						target="_blank">股权众筹第一案判决 平台人人投胜出</a><span class="time">2015-09-17</span>
+					</p>
+					<p>	
+					<a href=""
+						target="_blank">海通证券姜超：三理由告诉你不要那么悲观 市场已经不算贵</a><span class="time">2015-09-16</span>
+					</p>
+					<p>	
+					<a href=""
+						target="_blank">告别“钱荒” 步入“资产配置荒”时代</a><span class="time">2015-09-15</span>
+					</p>
+					<p>
+					<a href=""
+						target="_blank">美元，别人的货币，我们的问题</a><span class="time">2015-09-15</span>
+					</p>
+					<p>
+					<a href=""
+						target="_blank">经济下行压力明显增大 继高盛之后中金下调中国GDP预期</a><span class="time">2015-09-15</span>
+					</p>
+					<p>
+					<a href=""
+						target="_blank">你真的理解什么是O2O吗？它的三大特点和两大难题</a><span class="time">2015-09-14</span>
+					</p>
+					<p>
+					<a href=""
+						target="_blank">李曙军欲开“一人公募” 首现自然人公募基金</a><span class="time">2015-09-14</span>
+					</p>
+
+					</div>
+   <div class="tab-pane fade" id="jmeter">
+       <p><a href="" target="_blank">【私募知识】私募基金的五大误区</a><span class="time">2016-04-15</span></p>
+		  <p><a href="" target="_blank">秒杀盖茨和巴老 这哥们财富增长了14658%</a><span class="time">2015-09-17</span></p>
+	  <p>	<a href="" target="_blank">会买衣服怎么可能不会投资？教你从买衣服中学投资！</a><span class="time">2015-09-17</span></p>
+	  <p>	<a href="" target="_blank">他赚了75亿美金, 却要在2016年之前散尽家产</a><span class="time">2015-09-16</span></p>
+		  <p><a href="" target="_blank">美团估值为何骤降了？“烧钱模式”惹的祸!</a><span class="time">2015-09-16</span></p>
+	  <p>	<a href="" target="_blank">滴滴投资人王刚：滴滴发展过程跌宕起伏堪比韩剧</a><span class="time">2015-09-15</span></p>
+		  <p><a href="" target="_blank">张泉灵离职央视：生命的后半段，我想重来一次！</a><span class="time">2015-09-14</span></p>
+		  <p><a href="" target="_blank">美国“9.11”事件3700余名救援人员确诊患癌</a><span class="time">2015-09-14</span></p>
+		  <p><a href="" target="_blank">触控笔、微软站台还有爱马仕，苹果简直能把乔帮主气活了！</a><span class="time">2015-09-11</span></p>
+		  <p><a href="" target="_blank">股权众筹第一案焦点：平台是受托人还是居间人</a><span class="time">2015-09-07</span>
+   </p>
+   </div>
+				<div class="tab-pane fade" id="ejb">
+					<p>
+						<a href=""
+							target="_blank">【投资策略】一文看懂量化对冲</a><span class="time">2016-04-15</span>
+					</p>
+					<p>	
+				<a href=""
+						target="_blank">十年后的中国远超你想象（深度！）</a><span class="time">2016-02-02</span>
+					</p>
+					<p>
+					<a href=""
+						target="_blank">唐彬：互联网金融的哲学思考</a><span class="time">2016-02-02</span>
+					</p>
+					<p>
+					<a href=""
+						target="_blank">哈佛76年研究结果：只要遇到真爱，人生繁盛的几率就会显著提升</a><span
+						class="time">2016-02-02</span>
+					</p>
+					<p><a href=""
+						target="_blank">私人财富重配 波澜壮阔的大牛市或在路上</a><span class="time">2016-02-02</span>
+					</p>
+					</div>
+			</div>
+	
+	</div></center>
 	<!-- 底部 -->
 	<center>
 		<div class="container index">

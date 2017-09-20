@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qian.dao.LoginDao;
+import com.web.bean.Finance_product_funds;
 import com.web.bean.Users;
 
 @Service
@@ -16,6 +17,11 @@ public class LoginService {
 
 	@Autowired
 	private LoginDao loginDao;
+	
+	
+	public List<Finance_product_funds> selectFunds(){
+		return loginDao.SelectFunds();
+	}
 	
 	public List<Users> LoginList(){//登录
 		return this.loginDao.LoginList();

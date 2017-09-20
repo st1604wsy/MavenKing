@@ -272,7 +272,7 @@ ul#nav li a:hover {
                                     		  alert(flag);
                                     		  if(flag!=false&&flag==true){
 													alert("提交后台");
-													 $("#loginForm").attr("action","/MavenKing1/Login/login");
+													 $("#loginForm").attr("action","/MavenKing1/Login/LibraryLogin");
 		                                        		$("#loginForm").submit();
 												}
                                     	  }

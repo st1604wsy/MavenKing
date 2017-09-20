@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.qian.service.LoginService;
+import com.web.bean.Finance_product_funds;
 import com.web.bean.Users;
 
 @Controller
@@ -24,7 +26,9 @@ public class LoginController {//页面跳转，用户登录，用户注册
 	private LoginService loginService;
 	
 	@RequestMapping("/index")//进入首页
-	public String test1(){
+	public String test1(Model model){
+		List<Finance_product_funds> list=loginService.selectFunds();
+		model.addAttribute("FundsList",list);
 		return "qian_index";
 	}
 	
@@ -50,10 +54,35 @@ public class LoginController {//页面跳转，用户登录，用户注册
 	public String qian_investment(){//进入投研中心页面
 		return "qian_Investment";
 	}
-	@RequestMapping("/qian_Library")
+	@RequestMapping("/qian_LibraryLogin")
 	public String qian_Library(){//进入我的加法库页面
-		return "qian_Library";
+		return "qian_LibraryLogin";
 	}
+	
+	@RequestMapping("/LibraryLogin")
+	public String qian_LibraryLogin(Users users,Model model){//进入我的加法库登录页面
+		List<Users> list=loginService.LoginList();
+		for (Users u : list) {
+			if (u.getUser_name().equals(users.getUser_name())||u.getPassword().equals(users.getPassword())) {
+				if (u.getMobile_Phone().equals(users.getMobile_Phone())) {
+					String username=u.getUser_name();
+					model.addAttribute("name",u.getUser_name());
+					
+					return "qian_Library";
+				} else {
+					model.addAttribute("LoginMsg","手机号码错误，请重新输入");
+					return "qian_login";
+				}
+			} else {
+				model.addAttribute("LoginMsg","用户名或密码错误，请重新输入");
+				return "qian_login";
+			}
+		}
+		return "";
+		
+		
+	}
+	
 	@RequestMapping("/qian_press")
 	public String qian_press(){//进入新闻中心页面
 		return "qian_press";
@@ -72,7 +101,6 @@ public class LoginController {//页面跳转，用户登录，用户注册
 	}
 	
 	@RequestMapping("/login")
-	@ResponseBody
 	public String LoginList(Users users,Model model){//登录
 		List<Users> list=loginService.LoginList();
 		for (Users u : list) {

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Push_notice {//公告表
 	private int id;//公告id
 	private String title;//标题
-	private String context;//内容
+	private String content;//内容
 	private int status;//状态
 	private Date create_date;//创建时间
 	private Date update_date;//修改时间
@@ -30,13 +30,12 @@ public class Push_notice {//公告表
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContext() {
-		return context;
+	public String getContent() {
+		return content;
 	}
-	public void setContext(String context) {
-		this.context = context;
+	public void setContent(String content) {
+		this.content = content;
 	}
-
 	public int getStatus() {
 		return status;
 	}

@@ -5,6 +5,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>我的加法库</title>
+<link href="/MavenKing1/js/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script src="/MavenKing1/js/bootstrap/jquery.min.js"></script>
+<script src="/MavenKing1/js/bootstrap/bootstrap.min.js">
+</script><style type="text/css">
+    /* Custom Styles */
+    ul.nav-tabs{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+    ul.nav-tabs.affix{
+        top: 30px; /* Set the top position of pinned element */
+    }</style>
+
+
 <link rel="stylesheet" type="text/css" href="../css/new-login.css">
 <script type="text/javascript" src="../js/nwd_common.js"></script>
 <link href="../css/nwd_common.css" rel="stylesheet">
@@ -53,7 +93,7 @@ ul#nav li a:hover {
 }
 </style>
 </head>
-<body>
+<body  data-spy="scroll" data-target="#myScrollspy">
 
 	<div class="nwd_top">
 		<!--顶部
@@ -113,59 +153,126 @@ ul#nav li a:hover {
 			<li><a href="/MavenKing1/Login/qian_Library">我的加法库</a></li>
 		</ul>
 	</div>
-	<div class="demo">
-		<!--
-                          	轮播图
-                          -->
-		<a class="control prev"></a><a class="control next abs"></a>
-		<!--自定义按钮，移动端可不写-->
-		<div class="slider">
-			<!--主体结构，请用此类名调用插件，此类名可自定义-->
-			<ul>
-				<li><a href=""><img src="../images/1.jpg" /></a></li>
-				<li><a href=""><img src="../images/2.jpg" /></a></li>
-				<li><a href=""><img src="../images/3.jpg" /></a></li>
-				<li><a href=""><img src="../images/4.jpg" /></a></li>
-				<li><a href=""><img src="../images/5.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-	<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
 	<script src="../js/YuxiSlider.jQuery.min.js"></script>
-	<script>
-		$(".slider").YuxiSlider({
-			width : "100%", //容器宽度
-			height : 350, //容器高度
-			control : $('.control'), //绑定控制按钮
-			during : 4000, //间隔4秒自动滑动
-			speed : 800, //移动速度0.8秒
-			mousewheel : true, //是否开启鼠标滚轮控制
-			direkey : true
-		//是否开启左右箭头方向控制
-		});
-	</script>
-	<!--
-	公告
--->
-	<div class="index_gonggao clearfix">
-		<div class="index_main w1180 clearfix">
-			<dl class="fl index_gonggaoCon pad10">
-				<dd class="fl fc_3 pad_l20 wid_w110">
-					<span class="nwd_icon nwd_icon_gonggao mar_r10">&nbsp;</span>理财公告
-				</dd>
-				<dt class="fl wid_w940">
-					<a target="_blank" class="fl">公告！！！！！！！！！！！</a>
-				</dt>
-			</dl>
-			<span class="fr moregonggao mar_r20"><a href="#"
-				target="_blank">更多&gt;&gt;</a></span>
-		</div>
-	</div>
 
 	
 	
-	<!-- 中间显示，自己添加 -->
-	<div><center>中间显示，自己添加</center></div>
+	<!-- 中间显示，自己添加 --><center>
+	<div style="width: 75%">
+	
+	<div align="left"><img style="width: 120px;height:140px" src="/MavenKing1/images/小人.jpg"/>
+	
+	<span style="width: 100%">
+	<font size="6" color="red">${name}:</font><font size="3">你好</font>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button>安全退出</button>
+	</span>
+	</div>
+	
+	<hr><br><br>
+	<table width="100%" border="0" cellpadding="1" bgcolor="red">
+	<tr bgcolor="white" align="center">
+	<td width="20%">&nbsp;1</td>
+	<td width="20%">&nbsp;2</td>
+	<td width="20%">&nbsp;</td>
+	<td width="20%">&nbsp;</td>
+	<td width="20%">&nbsp;</td>
+	
+	</tr>
+	<tr align="center" bgcolor="white">
+	<td width="20%">账户可用余额(元)</td>
+	<td width="20%">账户总资产(元)</td>
+	<td width="20%">投资金额(元)</td>
+	<td width="20%">累计收益(元)</td>
+	<td width="20%">冻结金额(元)</td>
+	</tr>
+	
+	<tr bgcolor="white" align="center">
+	<td width="20%"><button>充值</button>&nbsp;&nbsp;&nbsp;<button>提款</button></td>
+	<td width="20%"></td>
+	<td width="20%"></td>
+	<td width="20%"></td>
+	<td width="20%"></td>
+	</tr>
+	</table>
+	<br><br>
+	<hr style="height: 2px;background-color:#EBEBEB">
+	
+	<!-- 我的投资 -->
+	<div style="height: 100%">
+	
+	<div class="container">
+	
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="active"><a href="#section-1">我的投资</a></li>
+                <li><a href="#section-2">投资记录</a></li>
+                <li><a href="#section-3">充值记录</a></li>
+                <li><a href="#section-4">提款记录</a></li>
+                <li><a href="#section-5">体验金记录</a></li>
+                 <li><a href="#section-6">我的账户</a></li>
+                  <li><a href="#section-7">账户充值</a></li>
+                   <li><a href="#section-8">安全信息</a></li>
+                    <li><a href="#section-9">我要提款</a></li>
+                     <li><a href="#section-10">我是理财师</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <h2 id="section-1">我的投资</h2>
+            	
+            <hr>
+            <h2 id="section-2">投资记录</h2>
+            投资记录
+            <hr>
+            <h2 id="section-3">充值记录</h2>
+           充值记录
+           <hr>
+            <h2 id="section-4">提款记录</h2>
+            提款记录
+             <hr>
+            <h2 id="section-5">体验金记录</h2>
+        
+        <hr>
+        
+        <h2 id="section-6">我的账户</h2>
+        
+        <hr>
+        <h2 id="section-7">账户充值</h2>
+        账户充值
+        <hr>
+        
+        <h2 id="section-8">安全信息</h2>
+        安全信息
+        <hr>
+        
+        <h2 id="section-9">我要提款</h2>
+        我要提款
+        <hr>
+        
+        <h2 id="section-10">我是理财师</h2>
+        我是理财师
+        <hr>
+        
+        </div>
+    </div></div>
+	
+	
+	
+	
+	</div>
+	</div></center>
+	<!-- 中间显示结束 -->
+	
+	
 	<!-- 底部 -->
 	<center>
 		<div class="container index">

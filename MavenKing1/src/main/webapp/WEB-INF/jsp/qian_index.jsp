@@ -112,7 +112,12 @@ ul#nav li a:hover {
 			<li><a href="/MavenKing1/Login/qian_updown">下载中心</a></li>
 			<li><a href="/MavenKing1/Login/qian_ying">盈+商学院</a></li>
 			<li><a href="/MavenKing1/Login/qian_Investment">投研中心</a></li>
+			<c:if test="${!empty name}">
 			<li><a href="/MavenKing1/Login/qian_Library">我的加法库</a></li>
+			</c:if>
+			<c:if test="${empty name}">
+			<li><a href="/MavenKing1/Login/qian_LibraryLogin">我的加法库</a></li>
+			</c:if>
 		</ul>
 	</div>
 
@@ -176,40 +181,50 @@ ul#nav li a:hover {
 		</div>
 		<div class="mar_b20 clearfix">
 			<ul class="jiacaiauto_pro clearfix">
+			<c:forEach items="${FundsList}" var="s">
 				<li class="pad_t15  pad_b15 " onclick="window.open()"
-					style="height: 320px;">
-					<div class="jiacaiauto_name pad_l20"></div>
-				</li>
-				<li class="pad_t15  pad_b15 " onclick="window.open()"
-					style="height: 320px;">
-					<div class="jiacaiauto_name pad_l20"></div>
-				</li>
-				<li class="pad_t15  pad_b15 " onclick="window.open()"
-					style="height: 320px;">
-					<div class="jiacaiauto_name pad_l20"></div>
-				</li>
-				<li class="pad_t15  pad_b15 " onclick="window.open()"
-					style="height: 320px;">
-					<div class="jiacaiauto_name pad_l20"></div>
-				</li>
-				<li class="pad_t15  pad_b15 " onclick="window.open()"
-					style="height: 320px;">
+					style="height: 320px;"><center>
+					<font size="5" color="red">${s.name}</font></center>
 					<div class="jiacaiauto_name pad_l20">
-						<span class="fc_3 fs_18">嘉财宝</span>
-
-						<p class="fc_9 lin_36 elli">新晋网红 长期稳健收益佳</p>
-					</div>
-					<div class="jiacai_mony txt_center">
-						<span class="fs_48 fc_f60 Numfont">11</span><em
-							class="fc_f60 fs_18">%</em> 全局加息start 定义参数
-
-						<p class="fc_9 lin_24">近3个月年化收益</p>
-					</div>
-					<div class="jiacai_time txt_center fc_5 pad_t5 pad_b15">封闭期：545天</div>
-					<div class="jiacai_add txt_center">
-						<a class="btn btn_size120 btn_bgf60 mar_t5">立即抢购</a>
+					<table  border="1" bordercolor="red" style="border-collapse:collapse" height="100%" width="100%">
+					<tr bgcolor="white" align="center" style="width: 100%">
+						<td colspan="2" align="center">${s.type}</td>
+					</tr>
+					<tr>
+					<td>${s.year_rate }</td>
+					<td>${s.buyer_count }</td>
+					</tr>
+					
+					<tr>
+					<td>年化率</td>
+					<td>购买人数</td>
+					</tr>
+					<tr>
+					<td colspan="2"><tr></td>
+					
+					</tr>
+					
+					<tr>
+					<td colspan="2">
+					${s.floor_amount}
+					</td>
+					</tr>
+					<tr>
+					<td colspan="2"><tr></td>
+					
+					</tr>
+					
+					<tr>
+					<td>
+					<input type="button" value="立即购买" >
+					</td>
+					</tr>
+					
+					</table>
+					
 					</div>
 				</li>
+				</c:forEach>
 			</ul>
 		</div>
 	</div>
